@@ -1,16 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Navbar } from "@/components/mindsphere/Navbar";
+import { Hero } from "@/components/mindsphere/Hero";
+import { About } from "@/components/mindsphere/About";
+import { Blog } from "@/components/mindsphere/Blog";
+import { Events } from "@/components/mindsphere/Events";
+import { Testimonials } from "@/components/mindsphere/Testimonials";
+import { JoinCta } from "@/components/mindsphere/JoinCta";
+import { Faq } from "@/components/mindsphere/Faq";
+import { Collab } from "@/components/mindsphere/Collab";
+import { Contact } from "@/components/mindsphere/Contact";
+import { Newsletter } from "@/components/mindsphere/Newsletter";
+import { Footer } from "@/components/mindsphere/Footer";
+import { NewsletterModal } from "@/components/mindsphere/NewsletterModal";
+import { useScrollReveal } from "@/components/mindsphere/hooks";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  useScrollReveal();
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Blog />
+        <Events />
+        <Testimonials />
+        <JoinCta />
+        <Faq />
+        <Collab />
+        <Contact />
+        <Newsletter onOpen={() => setModalOpen(true)} />
+      </main>
+      <Footer />
+      <NewsletterModal open={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
