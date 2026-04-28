@@ -477,6 +477,13 @@
   .ms-reveal.d3 { transition-delay: .24s; }
   .ms-reveal.d4 { transition-delay: .32s; }
 
+  /* Card-only reveal: preserves nth-child staggered translateY on .ms-ab-card */
+  .ms-ab-card.ms-ab-reveal { opacity: 0; transition: opacity .7s ease; }
+  .ms-ab-card.ms-ab-reveal.visible { opacity: 1; }
+  .ms-ab-card.ms-ab-reveal.d1 { transition-delay: .08s; }
+  .ms-ab-card.ms-ab-reveal.d2 { transition-delay: .22s; }
+  .ms-ab-card.ms-ab-reveal.d3 { transition-delay: .36s; }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .ms-nav-links, .ms-btn-nav, .ms-theme-btn { display: none; }
