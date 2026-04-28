@@ -49,7 +49,7 @@ export function useScrollReveal() {
       },
       { threshold: 0.1 }
     );
-    document.querySelectorAll(".ms-reveal").forEach((el) => obs.observe(el));
+    document.querySelectorAll(".ms-reveal, .ms-ab-reveal").forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 }
