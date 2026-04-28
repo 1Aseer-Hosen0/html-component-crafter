@@ -8,9 +8,9 @@ interface CardItem {
 }
 
 export const CardRow = ({ items }: { items: CardItem[] }) => (
-  <div className="ms-ab-row ms-reveal">
-    {items.map((it) => (
-      <div key={it.num} className="ms-ab-card">
+  <div className="ms-ab-row">
+    {items.map((it, i) => (
+      <div key={it.num} className={`ms-ab-card ms-ab-reveal d${i + 1}`}>
         <div className="ms-ab-card-num">{it.num}</div>
         <span className="ms-ab-card-tag">{it.tag}</span>
         <div className="ms-ab-card-title">{it.title}</div>
